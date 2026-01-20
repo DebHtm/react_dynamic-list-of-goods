@@ -11,15 +11,21 @@ export const App: React.FC = () => {
   const [goods, setGoods] = useState<Good[]>([]);
 
   const loadAll = () => {
-    getAll().then(setGoods);
+    getAll()
+      .then(setGoods)
+      .catch(() => setGoods([]));
   };
 
   const loadFirst5 = () => {
-    get5First().then(setGoods);
+    get5First()
+      .then(setGoods)
+      .catch(() => setGoods([]));
   };
 
   const loadRed = () => {
-    getRedGoods().then(setGoods);
+    getRedGoods()
+      .then(setGoods)
+      .catch(() => setGoods([]));
   };
 
   return (
